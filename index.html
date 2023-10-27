@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>RPP-Careri-Facundo</title>
+</head>
+
+<body class="main-content">
+    <div class="contenedor-tabla" id="contenedor-tabla">
+        <div class="row division">
+            <h3>Form datos</h3>
+            <button onclick="abrirFormulario()">Agregar</button>
+        </div>
+        <div class="row">
+            <label for="select-filtro">Filtrar por: </label>
+            <select id="select-filtro" onchange="filtrarColumnas()">
+                <option value="1" selected>Todos</option>
+                <option value="2">Heroes</option>
+                <option value="3">Villanos</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="input-promedio">Calcular edad promedio</label>
+            <input id="input-promedio" type="text" disabled><button onclick="calcularPromedio()">Calcular</button>
+        </div>
+
+        <div id="cbox-columnas" class="row">
+            <label class="mostrar-label">Mostrar columnas: </label>
+        </div>
+        <table class="tabla">
+            <thead>
+                <tr>
+                    <th id="cabecera-id" columna="id">Id</th>
+                    <th id="cabecera-nombre" columna="nombre">Nombre</th>
+                    <th id="cabecera-apellido" columna="apellido">Apellido</th>
+                    <th id="cabecera-edad" columna="edad">Edad</th>
+                    <th id="cabecera-alterego" columna="alterego">Alter Ego</th>
+                    <th id="cabecera-ciudad" columna="ciudad">Ciudad</th>
+                    <th id="cabecera-publicado" columna="publicado">Publicado</th>
+                    <th id="cabecera-enemigo" columna="enemigo">Enemigo</th>
+                    <th id="cabecera-robos" columna="robos">Robos</th>
+                    <th id="cabecera-asesinatos" columna="asesinatos">Asesinatos</th>
+                </tr>
+            </thead>
+            <tbody id="filas-tabla"></tbody>
+        </table>
+    </div>
+
+
+
+    <div class="contenedor-form" id="abm-form">
+        Formulario ABM
+        <select id="tipo-input" onchange="seleccionarTipoPersona()">
+            <option value="1">Heroe</option>
+            <option value="2">Villano</option>
+        </select>
+        <input id="id-input" hidden type="text">
+        <input class="text-input" id="nombre-input" placeholder="Ingrese el nombre" type="text">
+        <input class="text-input" id="apellido-input" type="text" placeholder="Ingrese el apellido">
+        <input class="text-input" id="edad-input" type="number" placeholder="Ingrese la edad">
+
+        <input class="text-input" id="alterego-input" type="text" placeholder="Ingrese el alter ego">
+        <input class="text-input" id="ciudad-input" type="text" placeholder="Ingrese la ciudad">
+        <input class="text-input" id="publicado-input" type="number" placeholder="Ingrese el año publicado">
+
+        <input class="text-input" id="enemigo-input" type="text" placeholder="Ingrese el enemigo">
+        <input class="text-input" id="robos-input" type="number" placeholder="Ingrese la cantidad de robos">
+        <input class="text-input" id="asesinatos-input" type="number" placeholder="Ingrese cantidad de asesinatos">
+
+
+        <div class="row-button">
+            <button id="boton-eliminar" class="cancel-button" onclick="eliminarAccion()">
+                Eliminar
+            </button>
+            <button class="cancel-button" onclick="abrirTabla()">
+                Cancelar
+            </button>
+            <button onclick="aceptarAccion()">
+                Aceptar
+            </button>
+        </div>
+    </div>
+</body>
+
+<script src="persona.js"></script>
+<script src="heroe.js"></script>
+<script src="villano.js"></script>
+<script src="index.js"></script>
+
+</html>
